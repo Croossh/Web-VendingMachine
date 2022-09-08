@@ -3,129 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Croossh`s VendingMachine</title>
-    <script>
-
-      let water = {
-            name : '생 수',
-            amount : 500
-        }
-        let milkis = {
-            name : '밀키스',
-            amount : 800
-        }
-        let coke = {
-            name : '콜 라',
-            amount : 1200
-        }
-        let hot6 = {
-            name : '핫식스',
-            amount : 1500
-        }
-        let fanta = {
-            name : '환 타',
-            amount : 2100
-        }
-        let condition = {
-            name : '컨디션 파워',
-            amount : 4500
-        }
-      let menuList = [water, milkis, coke, hot6, fanta, condition]
-        
-        
-      function count(type){
-        const resultElement = document.getElementById('result');
-        let number = resultElement.innerText;
-        if(type === '100'){
-            number = parseInt(number) + 100;
-          }else if(type === '500'){
-            number = parseInt(number) + 500;
-            }else if(type === '1000'){
-              number = parseInt(number) + 1000;
-              }else if(type === '5000'){
-                number = parseInt(number) + 5000;
-                }
-      resultElement.innerText = number;
-      }
-      function minusAdd(type){
-        const resultElement = document.getElementById('result');
-        const IdSelect = document.getElementById('add');
-        const liElement = document.createElement('li');
-
-        let value;
-
-        
-        let number = resultElement.innerText;
-        if(type === '500'){
-          if(resultElement.innerText >= 500){
-            number = parseInt(number) - 500;
-            alert('생수를 구매하였습니다.');
-            
-            value = menuList[0].name + ' ---- ' + menuList[0].amount;
-            liElement.textContent = value;
-            IdSelect.appendChild(liElement);
-              }else{
-                alert('금액이 부족합니다.');
-              }
-            }else if(type === '800'){
-              if(resultElement.innerText >= 800){
-                number = parseInt(number) - 800;
-                alert('밀키스를 구매하였습니다.');
-
-                value = menuList[1].name + ' ---- ' + menuList[1].amount;
-                liElement.textContent = value;
-                IdSelect.appendChild(liElement);
-                  }else{
-                    alert('금액이 부족합니다.');
-                  }
-                }else if(type === '1200'){
-                  if(resultElement.innerText >= 1200){
-                    number = parseInt(number) - 1200;
-                    alert('콜라를 구매하였습니다.');
-
-                    value = menuList[2].name + ' ---- ' + menuList[2].amount;
-                    liElement.textContent = value;
-                    IdSelect.appendChild(liElement);
-                      }else{
-                        alert('금액이 부족합니다.');
-                      }
-                    }else if(type === '1500'){
-                      if(resultElement.innerText >= 1500){
-                        number = parseInt(number) - 1500;
-                        alert('핫식스를 구매하였습니다.');
-
-                        value = menuList[3].name + ' ---- ' + menuList[3].amount;
-                        liElement.textContent = value;
-                        IdSelect.appendChild(liElement);
-                          }else{
-                            alert('금액이 부족합니다.');
-                          }
-                        }else if(type === '2100'){
-                          if(resultElement.innerText >= 2100){
-                            number = parseInt(number) - 2100;
-                            alert('환타를 구매하였습니다.');
-
-                            value = menuList[4].name + ' ---- ' + menuList[4].amount;
-                            liElement.textContent = value;
-                            IdSelect.appendChild(liElement);
-                              }else{
-                                alert('금액이 부족합니다.');
-                              }
-                            }else if(type === '4500'){
-                              if(resultElement.innerText >= 4500){
-                                number = parseInt(number) - 4500;
-                                alert('컨디션을 구매하였습니다.');
-
-                                value = menuList[5].name + ' ---- ' + menuList[5].amount;
-                                liElement.textContent = value;
-                                IdSelect.appendChild(liElement);
-                                  }else{
-                                    alert('금액이 부족합니다.');
-                                  }
-          }
-      resultElement.innerText = number;
-      
-      }
-    </script>
+    <script src="index.js"></script>
   </head>
 
   <body>
@@ -159,34 +37,34 @@
         <table border ="2" bordercolor = "blue" cellspacing = "8px" width = "400" height = "400" >
           <tr align = "center">
             <td>
-              <img src = "water.jpg" width = "100px" height = "100px" style = margin:10px>
-              <br><input type = "button" value = " 생 수  500원 " style = border-radius:7px onclick="minusAdd('500')">
+              <img src = "./img/water.jpg" width = "100px" height = "100px" style = margin:10px><br>
+              <input type = "button" value = " 생 수  500원 " style = border-radius:7px onclick = "minus('500')">
             </td>
             <td>
-              <img src = "milkis.jpg" width = "100px" height = "100px" style = margin:10px>
-              <br><input type = "button" value = " 밀키스 800원 " style = border-radius:7px onclick="minusAdd('800')">
+              <img src = "./img/milkis.jpg" width = "100px" height = "100px" style = margin:10px><br>
+              <input type = "button" value = " 밀키스 800원 " style = border-radius:7px onclick = "minus('800')">
             </td>
             <td>
-              <img src = "coke.jpg" width = "100px" height = "100px" style = margin:10px>
-              <br><input type = "button" value = " 콜 라 1200원 " style = border-radius:7px onclick="minusAdd('1200')">
+              <img src = "./img/coke.jpg" width = "100px" height = "100px" style = margin:10px><br>
+              <input type = "button" value = " 콜 라 1200원 " style = border-radius:7px onclick = "minus('1200')">
             </td>
           </tr>
           <tr align = "center">
             <td>
-              <img src = "hot6.jpg" width = "100px" height = "100px" style = margin:10px>
-              <br><input type = "button" value = "핫식스 1500원" style = border-radius:7px onclick="minusAdd('1500')">
+              <img src = "./img/hot6.jpg" width = "100px" height = "100px" style = margin:10px><br>
+              <input type = "button" value = "핫식스 1500원" style = border-radius:7px onclick = "minus('1500')">
             </td>
             <td>
-              <img src = "fanta.jpg" width = "100px" height = "100px" style = margin:10px>
-              <br><input type = "button" value = " 환 타 2100원 " style = border-radius:7px onclick="minusAdd('2100')">
+              <img src = "./img/fanta.jpg" width = "100px" height = "100px" style = margin:10px><br>
+              <input type = "button" value = " 환 타 2100원 " style = border-radius:7px onclick = "minus('2100')">
             </td>
             <td>
-              <img src = "condi.jpg" width = "100px" height = "100px" style = margin:10px>
-              <br><input type = "button" value = " 컨디션 4500원 " style = border-radius:7px onclick="minusAdd('4500')">
+              <img src = "./img/condi.jpg" width = "100px" height = "100px" style = margin:10px><br>
+              <input type = "button" value = " 컨디션 4500원 " style = border-radius:7px onclick = "minus('4500')">
             </td>
           </tr>
         </table>
       </p>
-    </center>
+    <center>
   </body>
 </html>
