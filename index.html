@@ -1,70 +1,132 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Croossh`s VendingMachine</title>
     <script src="index.js"></script>
+    <link rel="stylesheet" href="./index.css" />
   </head>
 
   <body>
-    <center>
-      <h1>★☆★ Croossh의 자판기 ★☆★</h1>
+    <h1 class="main">★☆★ Croossh의 자판기 ★☆★</h1>
 
+    <div class="insert_area">
       <h3>동전 투입</h3>
-      <input type = "button" value = " 100원 " onclick = "count('100')">
-      <input type= "button" value = " 500원 " onclick = "count('500')">
-      <input type= "button" value = "1000원" onclick = "count('1000')">
-      <input type= "button" value = "5000원" onclick = "count('5000')">
-
+      <div class="top_btn">
+        <button type="button" onclick="count('100')">100원</button>
+        <button type="button" onclick="count('500')">500원</button>
+        <button type="button" onclick="count('1000')">1000원</button>
+        <button type="button" onclick="count('5000')">5000원</button>
+      </div>
       <h6>클릭하면 해당 금액이 투입됩니다.</h6>
+    </div>
 
-      <table>
-        <tr align = "center">
-          <td>
-            현재금액 :
-          </td>
-          <td align = "right">
-            <div id='result'>0</div>
-          </td>
-          <td align = "left">
-            원
-          </td>
-        </tr>
-      </table>
+    <div class="coin_result">
+      현재금액: &nbsp;
+      <div id="result">0</div>
+      <div>원</div>
+    </div>
 
+    <div class="menu_area">
       <h2>------ MENU ------</h2>
-      <p>
-        <table border ="2" bordercolor = "blue" cellspacing = "8px" width = "400" height = "400" >
-          <tr align = "center">
+      <div>
+        <table
+          border="2"
+          bordercolor="blue"
+          cellspacing="8px"
+          width="400"
+          height="400"
+        >
+          <tr align="center">
             <td>
-              <img src = "./img/water.jpg" width = "100px" height = "100px" style = margin:10px><br>
-              <input type = "button" value = " 생 수  500원 " style = border-radius:7px onclick = "minus('500')">
+              <img
+                src="./img/water.jpg"
+                width="100px"
+                height="100px"
+                style="margin: 10px"
+              /><br />
+              <input
+                type="button"
+                value=" 생 수  500원 "
+                style="border-radius: 7px"
+                onclick="minus('500')"
+              />
             </td>
             <td>
-              <img src = "./img/milkis.jpg" width = "100px" height = "100px" style = margin:10px><br>
-              <input type = "button" value = " 밀키스 800원 " style = border-radius:7px onclick = "minus('800')">
+              <img
+                src="./img/milkis.jpg"
+                width="100px"
+                height="100px"
+                style="margin: 10px"
+              /><br />
+              <input
+                type="button"
+                value=" 밀키스 800원 "
+                style="border-radius: 7px"
+                onclick="minus('800')"
+              />
             </td>
             <td>
-              <img src = "./img/coke.jpg" width = "100px" height = "100px" style = margin:10px><br>
-              <input type = "button" value = " 콜 라 1200원 " style = border-radius:7px onclick = "minus('1200')">
+              <img
+                src="./img/coke.jpg"
+                width="100px"
+                height="100px"
+                style="margin: 10px"
+              /><br />
+              <input
+                type="button"
+                value=" 콜 라 1200원 "
+                style="border-radius: 7px"
+                onclick="minus('1200')"
+              />
             </td>
           </tr>
-          <tr align = "center">
+          <tr align="center">
             <td>
-              <img src = "./img/hot6.jpg" width = "100px" height = "100px" style = margin:10px><br>
-              <input type = "button" value = "핫식스 1500원" style = border-radius:7px onclick = "minus('1500')">
+              <img
+                src="./img/hot6.jpg"
+                width="100px"
+                height="100px"
+                style="margin: 10px"
+              /><br />
+              <input
+                type="button"
+                value="핫식스 1500원"
+                style="border-radius: 7px"
+                onclick="minus('1500')"
+              />
             </td>
             <td>
-              <img src = "./img/fanta.jpg" width = "100px" height = "100px" style = margin:10px><br>
-              <input type = "button" value = " 환 타 2100원 " style = border-radius:7px onclick = "minus('2100')">
+              <img
+                src="./img/fanta.jpg"
+                width="100px"
+                height="100px"
+                style="margin: 10px"
+              /><br />
+              <input
+                type="button"
+                value=" 환 타 2100원 "
+                style="border-radius: 7px"
+                onclick="minus('2100')"
+              />
             </td>
             <td>
-              <img src = "./img/condi.jpg" width = "100px" height = "100px" style = margin:10px><br>
-              <input type = "button" value = " 컨디션 4500원 " style = border-radius:7px onclick = "minus('4500')">
+              <img
+                src="./img/condi.jpg"
+                width="100px"
+                height="100px"
+                style="margin: 10px"
+              /><br />
+              <input
+                type="button"
+                value=" 컨디션 4500원 "
+                style="border-radius: 7px"
+                onclick="minus('4500')"
+              />
             </td>
           </tr>
         </table>
-      </p>
-    <center>
+      </div>
+    </div>
   </body>
 </html>
