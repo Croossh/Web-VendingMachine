@@ -6,5 +6,4 @@
 2. 음료 구매
 3. 구매 목록 확인
 
-🐱‍🏍 본 프로젝트는 Vanilla Javascript로 작성되었습니다.<br>
-<br>
+🐱‍🏍 Vanilla Javascript로 작성되었습니다.<br>
