@@ -1,132 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Croossh`s VendingMachine</title>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="./index.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
   </head>
-
   <body>
-    <h1 class="main">★☆★ Croossh의 자판기 ★☆★</h1>
-
-    <div class="insert_area">
-      <h3>동전 투입</h3>
-      <div class="top_btn">
-        <button type="button" onclick="count('100')">100원</button>
-        <button type="button" onclick="count('500')">500원</button>
-        <button type="button" onclick="count('1000')">1000원</button>
-        <button type="button" onclick="count('5000')">5000원</button>
-      </div>
-      <h6>클릭하면 해당 금액이 투입됩니다.</h6>
-    </div>
-
-    <div class="coin_result">
-      현재금액: &nbsp;
-      <div id="result">0</div>
-      <div>원</div>
-    </div>
-
-    <div class="menu_area">
-      <h2>------ MENU ------</h2>
+    <header id="header">
       <div>
-        <table
-          border="2"
-          bordercolor="blue"
-          cellspacing="8px"
-          width="400"
-          height="400"
-        >
-          <tr align="center">
-            <td>
-              <img
-                src="./img/water.jpg"
-                width="100px"
-                height="100px"
-                style="margin: 10px"
-              /><br />
-              <input
-                type="button"
-                value=" 생 수  500원 "
-                style="border-radius: 7px"
-                onclick="minus('500')"
-              />
-            </td>
-            <td>
-              <img
-                src="./img/milkis.jpg"
-                width="100px"
-                height="100px"
-                style="margin: 10px"
-              /><br />
-              <input
-                type="button"
-                value=" 밀키스 800원 "
-                style="border-radius: 7px"
-                onclick="minus('800')"
-              />
-            </td>
-            <td>
-              <img
-                src="./img/coke.jpg"
-                width="100px"
-                height="100px"
-                style="margin: 10px"
-              /><br />
-              <input
-                type="button"
-                value=" 콜 라 1200원 "
-                style="border-radius: 7px"
-                onclick="minus('1200')"
-              />
-            </td>
-          </tr>
-          <tr align="center">
-            <td>
-              <img
-                src="./img/hot6.jpg"
-                width="100px"
-                height="100px"
-                style="margin: 10px"
-              /><br />
-              <input
-                type="button"
-                value="핫식스 1500원"
-                style="border-radius: 7px"
-                onclick="minus('1500')"
-              />
-            </td>
-            <td>
-              <img
-                src="./img/fanta.jpg"
-                width="100px"
-                height="100px"
-                style="margin: 10px"
-              /><br />
-              <input
-                type="button"
-                value=" 환 타 2100원 "
-                style="border-radius: 7px"
-                onclick="minus('2100')"
-              />
-            </td>
-            <td>
-              <img
-                src="./img/condi.jpg"
-                width="100px"
-                height="100px"
-                style="margin: 10px"
-              /><br />
-              <input
-                type="button"
-                value=" 컨디션 4500원 "
-                style="border-radius: 7px"
-                onclick="minus('4500')"
-              />
-            </td>
-          </tr>
-        </table>
+        <img src="./img/justdrink.png" alt="just drink!" />
       </div>
-    </div>
+    </header>
+    <main id="main">
+      <div class="container">
+        <!-- 왼쪽 영역 -->
+        <div class="left">
+          <div class="menu_section">
+            <div class="menu_items">
+              <h2>MENU</h2>
+              <ul>
+                <li>
+                  <img src="./img/water.jpg" />
+                  <button>500원</button>
+                </li>
+                <li><img src="./img/milkis.jpg" /> <button>800원</button></li>
+                <li><img src="./img/coke.jpg" /> <button>1200원</button></li>
+                <li><img src="./img/hot6.jpg" /> <button>1500원</button></li>
+                <li><img src="./img/fanta.jpg" /> <button>2000원</button></li>
+                <li><img src="./img/condi.jpg" /> <button>4500원</button></li>
+              </ul>
+            </div>
+            <div class="basket_section">
+              <h2>장바구니</h2>
+              <div class="basket_area"></div>
+              <div class="select_section">
+                <button>비우기</button>
+                <button>구 매</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 오른쪽 영역 -->
+        <div class="right">
+          <div class="coin_section">
+            <h2>금액 입금</h2>
+            <div class="coin">
+              <button>100원</button>
+              <button>500원</button>
+              <button>1000원</button>
+              <button>5000원</button>
+            </div>
+            <div class="exchange_section">
+              <div class="exchange">잔액</div>
+              <div class="result">0 원</div>
+            </div>
+          </div>
+
+          <div class="totalBying_section">
+            <h2>획득한 음료</h2>
+            <div class="totalBying_area"></div>
+            <div class="total">
+              <p>총 금액: 0원</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer">
+      <a href="https://croossh103.tistory.com/"
+        >Blog: https://croossh103.tistory.com/</a
+      >
+      <a href="https://github.com/Croossh"
+        >Github: https://github.com/Croossh</a
+      >
+    </footer>
   </body>
 </html>
