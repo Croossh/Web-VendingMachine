@@ -89,7 +89,7 @@ body {
   justify-content: center;
 }
 
-/* 각 메뉴 설정 */
+/* 각 메뉴 이미지 & 버튼 설정 */
 .menu_items ul li img {
   width: 80%;
   height: 90px;
@@ -125,26 +125,54 @@ body {
   align-items: center;
 }
 
-.basket_area {
+#basket_area {
   width: 80%;
   height: 200px;
+  padding: 5px;
 
   border: solid black 2px;
+  overflow: auto;
 }
 
 /* 선택 영역 */
 .select_section {
-  width: 100%;
+  width: 80%;
   height: 100px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .select_section button {
-  width: 20%;
+  width: 40%;
   height: 50px;
-  margin: 10px 45px 10px 45px;
+  margin: 10px 10px 10px 0px;
+}
+
+.select_btn {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.ex_result {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  padding: 10px;
+}
+
+.ex_result div {
+  margin-left: 15px;
+  font-size: 19px;
+}
+
+#pay_result {
+  width: 30%;
+  text-align: end;
 }
 
 /* 오른쪽 영역 기본 틀 */
@@ -177,6 +205,7 @@ body {
   margin: 15px 0 15px 0;
 }
 
+/* 코인 버튼 설정 */
 .coin button {
   width: 80px;
   height: 30px;
@@ -215,12 +244,24 @@ body {
   text-align: center;
 }
 
-.result {
-  width: 60%;
+#result {
+  width: 50%;
   line-height: 30px;
-  border: solid 2px black;
+  border-style: solid none solid none;
+  border-color: black;
+  border-width: 2px;
+
+  padding-right: 20px;
 
   text-align: end;
+}
+
+.won {
+  line-height: 30px;
+  border-style: solid solid solid none;
+  border-color: black;
+  border-width: 2px;
+  padding-right: 10px;
 }
 
 /* 총 구매 영역 */
@@ -259,12 +300,11 @@ body {
 }
 
 /* 하단 영역 */
-
 #footer {
   display: flex;
   justify-content: space-between;
 
-  margin: 20px 10px 0 10px;
+  margin: 20px 10px 50px 10px;
 }
 
 #footer a {
