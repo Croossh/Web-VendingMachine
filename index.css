@@ -356,4 +356,42 @@ body {
 
   font-weight: bold;
   color: rgb(90, 86, 86);
+  letter-spacing: 0px;
+}
+
+@media (min-width: 320px) and (max-width: 960px) {
+  body {
+    width: 500px;
+    margin: auto;
+    background-color: #fcc538;
+    font-family: "Jua", sans-serif;
+    letter-spacing: 5px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    border: solid 5px #f2873d;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 10px 10px 20px grey;
+  }
+
+  .left {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 96%;
+    margin: 10px;
+  }
+
+  .right {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 96%;
+    margin: 10px;
+  }
 }
