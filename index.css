@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
 body {
   width: 1000px;
   margin: auto;
   background-color: #fcc538;
+  font-family: "Jua", sans-serif;
+  letter-spacing: 5px;
 }
 
 #header div {
@@ -28,7 +32,9 @@ body {
   box-shadow: 10px 10px 20px grey;
 }
 
+/*******************/
 /* 왼쪽 영역 기본 틀*/
+/*******************/
 .left {
   display: flex;
   flex-wrap: wrap;
@@ -105,6 +111,9 @@ body {
 
   border: none;
   border-radius: 20px;
+
+  font-family: "Jua", sans-serif;
+  letter-spacing: 1px;
 }
 
 .menu_items ul li button:hover {
@@ -130,7 +139,8 @@ body {
   height: 200px;
   padding: 5px;
 
-  border: solid black 2px;
+  border: double 5px #fc7d23;
+  border-radius: 10px;
   overflow: auto;
 }
 
@@ -138,6 +148,7 @@ body {
 .select_section {
   width: 80%;
   height: 100px;
+  margin-top: 10px;
 
   display: flex;
   justify-content: flex-start;
@@ -147,6 +158,9 @@ body {
   width: 40%;
   height: 50px;
   margin: 10px 10px 10px 0px;
+
+  font-family: "Jua", sans-serif;
+  letter-spacing: 1px;
 }
 
 .select_btn {
@@ -156,6 +170,7 @@ body {
   flex-direction: row;
 }
 
+/* 장바구니 총 구매 금액 영역 */
 .ex_result {
   width: 50%;
   display: flex;
@@ -173,9 +188,13 @@ body {
 #pay_result {
   width: 30%;
   text-align: end;
+
+  letter-spacing: 0px;
 }
 
+/**********************/
 /* 오른쪽 영역 기본 틀 */
+/**********************/
 .right {
   display: flex;
   flex-wrap: wrap;
@@ -215,7 +234,9 @@ body {
   border-radius: 15px;
 
   background-color: #f2d035;
-  color: black;
+
+  font-family: "Jua", sans-serif;
+  letter-spacing: 1px;
 }
 
 .coin button:hover {
@@ -239,7 +260,10 @@ body {
 .exchange {
   width: 20%;
   line-height: 30px;
-  border: solid 2px black;
+  border-style: double none double double;
+  border-radius: 10px 0 0 10px;
+  border-color: #fc7d23;
+  border-width: 5px;
 
   text-align: center;
 }
@@ -247,20 +271,23 @@ body {
 #result {
   width: 50%;
   line-height: 30px;
-  border-style: solid none solid none;
-  border-color: black;
-  border-width: 2px;
+  border-style: double none double none;
+  border-radius: 0.1px 0.1px 0.1px 0.1px;
+  border-color: #fc7d23;
+  border-width: 5px;
 
   padding-right: 20px;
 
   text-align: end;
+  letter-spacing: 0px;
 }
 
 .won {
   line-height: 30px;
-  border-style: solid solid solid none;
-  border-color: black;
-  border-width: 2px;
+  border-style: double double double none;
+  border-radius: 0 10px 10px 0;
+  border-color: #fc7d23;
+  border-width: 5px;
   padding-right: 10px;
 }
 
@@ -279,24 +306,41 @@ body {
   align-items: center;
 }
 
-.totalBying_area {
+#totalBying_area {
   width: 80%;
   height: 400px;
+  padding: 5px;
+  border: double 5px #fc7d23;
+  border-radius: 10px;
 
-  border: solid black 2px;
+  overflow: auto;
+}
+
+#totalBying_area li {
+  font-size: 20px;
+  padding: 5px 0 0 0;
 }
 
 /* 총 금액 */
 .total {
-  width: 100%;
-  height: 100px;
+  width: 80%;
+  height: 80px;
+  padding: 20px 10px 0 10px;
 
   display: flex;
   justify-content: end;
 }
 
-.total p {
-  margin-right: 50px;
+.total div {
+  font-size: 19px;
+
+  padding-left: 15px;
+}
+
+#total_result {
+  width: 18%;
+  text-align: end;
+  letter-spacing: 0px;
 }
 
 /* 하단 영역 */
