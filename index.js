@@ -1,12 +1,4 @@
-let water = ["생수", "500"];
-let milkis = ["밀키스(캔)", "800"];
-let coke = ["콜라(컵)", "1200"];
-let hot6 = ["핫식스", "1500"];
-let fanta = ["환타", "2000"];
-let condi = ["컨디션 파워", "4500"];
-
-let buyingArray = [];
-
+// 동전 투입 함수
 function count(type) {
   const resultElement = document.getElementById("result");
 
@@ -24,76 +16,65 @@ function count(type) {
   resultElement.innerText = parseInt(number);
 }
 
-function plus(type) {
-  const resultElement = document.getElementById("pay_result");
+// 장바구니 관련
+let buyingArray = [];
+let totalArray = [];
 
+const getHowMany = (arr) => {
+  let goal = {};
+  for (el of arr) {
+    goal[el] = (goal[el] || 0) + 1;
+  }
+  return goal;
+};
+
+// 클릭시 장바구니 추가 관련 함수
+function plus(type) {
+  // 잔액 긁어오기
+  const resultElement = document.getElementById("pay_result");
   let number = parseInt(resultElement.innerText);
+
   // 가격 버튼 클릭 시 조건
   if (type === "500") {
-    // 생수
     number = parseInt(number) + 500;
-
-    const li = document.createElement("li");
-    const textnode = document.createTextNode(water[0]);
-    buyingArray.push(textnode.data);
-
-    li.appendChild(textnode);
-    document.getElementById("basket_area").appendChild(li);
+    buyingArray.push("생수");
   } else if (type === "800") {
-    // 밀키스
     number = parseInt(number) + 800;
-
-    const li = document.createElement("li");
-    const textnode = document.createTextNode(milkis[0]);
-    buyingArray.push(textnode.data);
-
-    li.appendChild(textnode);
-    document.getElementById("basket_area").appendChild(li);
+    buyingArray.push("밀키스(캔)");
   } else if (type === "1200") {
-    // 콜라
     number = parseInt(number) + 1200;
-
-    const li = document.createElement("li");
-    const textnode = document.createTextNode(coke[0]);
-    buyingArray.push(textnode.data);
-
-    li.appendChild(textnode);
-    document.getElementById("basket_area").appendChild(li);
+    buyingArray.push("콜라");
   } else if (type === "1500") {
-    // 핫식스
     number = parseInt(number) + 1500;
-
-    const li = document.createElement("li");
-    const textnode = document.createTextNode(hot6[0]);
-    buyingArray.push(textnode.data);
-
-    li.appendChild(textnode);
-    document.getElementById("basket_area").appendChild(li);
+    buyingArray.push("핫식스");
   } else if (type === "2000") {
-    // 환타
     number = parseInt(number) + 2000;
-
-    const li = document.createElement("li");
-    const textnode = document.createTextNode(fanta[0]);
-    buyingArray.push(textnode.data);
-
-    li.appendChild(textnode);
-    document.getElementById("basket_area").appendChild(li);
+    buyingArray.push("환타");
   } else if (type === "4500") {
-    // 컨디션
     number = parseInt(number) + 4500;
-
-    const li = document.createElement("li");
-    const textnode = document.createTextNode(condi[0]);
-    buyingArray.push(textnode.data);
-
-    li.appendChild(textnode);
-    document.getElementById("basket_area").appendChild(li);
+    buyingArray.push("컨디션");
   }
 
+  // 배열 중복 갯수 확인
+  let test = getHowMany(buyingArray);
+  let come = "";
+  for (i in test) {
+    come += `<li>${i} X ${test[i]}</li>`;
+  }
+
+  // 이전 자식요소 삭제
+  let cell = document.getElementById("basket_area");
+  while (cell.hasChildNodes()) {
+    cell.removeChild(cell.firstChild);
+  }
+
+  // 장바구니에 보여지는 영역
+  document.getElementById("basket_area").innerHTML = `${come}`;
+  // 잔액
   resultElement.innerText = parseInt(number);
 }
 
+// 비우기 함수
 function empty() {
   const payingElement = document.getElementById("pay_result");
   let payingNumber = parseInt(payingElement.innerText);
@@ -106,6 +87,7 @@ function empty() {
   }
 }
 
+// 구매 함수
 function buy() {
   const payingElement = document.getElementById("pay_result");
   let payingNumber = parseInt(payingElement.innerText);
@@ -121,23 +103,46 @@ function buy() {
   } else if (payingNumber > exchangeNumber) {
     alert("소지금이 부족합니다.");
   } else if (payingNumber !== 0) {
+    // 소지금 및 총 금액 합산
     realNumber += payingNumber;
-
     result = exchangeNumber - payingNumber;
     payingElement.innerText = 0;
 
+    // 구매시 장바구니 비우기
     const basketItems = document.getElementById("basket_area");
     basketItems.innerHTML = "";
     alert("모든 물품을 구매하였습니다.");
 
-    for (i = 0; i < buyingArray.length; i++) {
-      const li = document.createElement("li");
-      const textnode = document.createTextNode(buyingArray[i]);
-      console.log(textnode);
-
-      li.appendChild(textnode);
-      document.getElementById("totalBying_area").appendChild(li);
+    // 배열 중복 갯수 확인
+    let countBuy = getHowMany(buyingArray);
+    let come = "";
+    for (i in countBuy) {
+      come += `<li>${i} X ${countBuy[i]}</li>`;
     }
+
+    // 이전 자식요소 삭제
+    let cell = document.getElementById("totalBying_area");
+    while (cell.hasChildNodes()) {
+      cell.removeChild(cell.firstChild);
+    }
+
+    // 장바구니 배열을 구매한 배열로 옮기기
+    for (j = 0; j < buyingArray.length; j++) {
+      totalArray.push(buyingArray[j]);
+    }
+
+    // 장바구니 배열 초기화
+    buyingArray = [];
+
+    // 총 구매 갯수 확인
+    let countTotal = getHowMany(totalArray);
+    let come2 = "";
+    for (z in countTotal) {
+      come2 += `<li>${z} X ${countTotal[z]}</li>`;
+    }
+
+    // 장바구니에 보여지는 영역
+    document.getElementById("totalBying_area").innerHTML = `${come2}`;
 
     exchangeElement.innerText = parseInt(result);
     realElement.innerText = parseInt(realNumber);

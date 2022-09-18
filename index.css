@@ -13,7 +13,7 @@ body {
 }
 
 #header div img {
-  width: 90%;
+  width: 70%;
   margin: 20px 0 20px 0;
 }
 
@@ -265,6 +265,7 @@ body {
   border-color: #fc7d23;
   border-width: 5px;
 
+  padding-top: 0.1rem;
   text-align: center;
 }
 
@@ -276,6 +277,7 @@ body {
   border-color: #fc7d23;
   border-width: 5px;
 
+  padding-top: 0.1rem;
   padding-right: 20px;
 
   text-align: end;
@@ -288,6 +290,8 @@ body {
   border-radius: 0 10px 10px 0;
   border-color: #fc7d23;
   border-width: 5px;
+
+  padding-top: 0.1rem;
   padding-right: 10px;
 }
 
