@@ -2,9 +2,12 @@
 ### ✔ 주소 → https://croossh.github.io/Web-VendingMachine/
 
 #### <사용 방법>
-1. 동전 투입
-2. 음료 구매
-3. 획득한 음료 확인
+1. 금액 투입
+2. 음료 선택
+3. 장바구니 확인 👉 구매
+4. 구매한 음료 및 총 금액 확인
 
 #### <참고 사항>
-🐱‍🏍 Vanilla Javascript로 작성되었습니다.<br>
+✔ Vanilla Javascript 작성<br>
+✔ 모바일 및 웹 반응형<br>
+✔ 장바구니 및 구매한 음료 합산 표시
