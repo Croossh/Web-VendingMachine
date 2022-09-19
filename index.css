@@ -46,7 +46,7 @@ body {
 /* 메뉴 섹션 */
 .menu_section {
   width: 100%;
-  height: 740px;
+  height: 450px;
 
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -124,90 +124,12 @@ body {
   background-color: #f2873d;
 }
 
-/* 장바구니 영역 */
-.basket_section {
-  width: 100%;
-  height: 280px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#basket_area {
-  width: 80%;
-  height: 200px;
-  padding: 5px;
-
-  border: double 5px #fc7d23;
-  border-radius: 10px;
-  overflow: auto;
-}
-
-/* 선택 영역 */
-.select_section {
-  width: 80%;
-  height: 100px;
-  margin-top: 10px;
-
-  display: flex;
-  justify-content: flex-start;
-}
-
-.select_section button {
-  width: 40%;
-  height: 50px;
-  margin: 10px 10px 10px 0px;
-
-  font-family: "Jua", sans-serif;
-  letter-spacing: 1px;
-}
-
-.select_btn {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-}
-
-/* 장바구니 총 구매 금액 영역 */
-.ex_result {
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-
-  padding: 10px;
-}
-
-.ex_result div {
-  margin-left: 15px;
-  font-size: 19px;
-}
-
-#pay_result {
-  width: 30%;
-  text-align: end;
-
-  letter-spacing: 0px;
-}
-
-/**********************/
-/* 오른쪽 영역 기본 틀 */
-/**********************/
-.right {
-  display: flex;
-  flex-wrap: wrap;
-
-  width: 50%;
-  margin: 10px;
-}
-
 /* 코인 영역 */
 .coin_section {
   width: 100%;
-  height: 200px;
-  margin-bottom: 15px;
+  height: 14rem;
+  margin: 22px 0 5px 0;
+  padding: 16px 0 16px 0;
 
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -218,6 +140,7 @@ body {
   align-items: center;
 
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .coin {
@@ -295,10 +218,94 @@ body {
   padding-right: 10px;
 }
 
+/**********************/
+/* 오른쪽 영역 기본 틀 */
+/**********************/
+.right {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 50%;
+  margin: 10px;
+}
+
+/* 장바구니 영역 */
+.basket_section {
+  width: 100%;
+  height: 20rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 3px 3px 20px grey;
+}
+
+#basket_area {
+  width: 80%;
+  height: 10rem;
+  padding: 5px;
+
+  border: double 5px #fc7d23;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+/* 선택 영역 */
+.select_section {
+  width: 80%;
+  height: 100px;
+  margin-top: 10px;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+.select_section button {
+  width: 40%;
+  height: 50px;
+  margin: 10px 10px 10px 0px;
+
+  font-family: "Jua", sans-serif;
+  letter-spacing: 1px;
+}
+
+.select_btn {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+/* 장바구니 총 구매 금액 영역 */
+.ex_result {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  padding: 10px 0 0 0;
+}
+
+.ex_result div {
+  margin-left: 15px;
+  font-size: 19px;
+}
+
+#pay_result {
+  width: 40%;
+  text-align: end;
+
+  letter-spacing: 0px;
+}
+
 /* 총 구매 영역 */
 .totalBying_section {
   width: 100%;
-  height: 520px;
+  height: 24.5rem;
 
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -308,6 +315,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  margin: 22px 0 10px 0;
 }
 
 #totalBying_area {
@@ -338,11 +347,11 @@ body {
 .total div {
   font-size: 19px;
 
-  padding-left: 15px;
+  padding-left: 20px;
 }
 
 #total_result {
-  width: 18%;
+  width: 20%;
   text-align: end;
   letter-spacing: 0px;
 }
@@ -372,6 +381,8 @@ body {
     margin: auto;
     background-color: #fcc538;
     font-family: "Jua", sans-serif;
+    /* color 추가 */
+    color: black;
     letter-spacing: 5px;
   }
 
@@ -402,7 +413,7 @@ body {
 
     margin: 0 10px 20px 10px;
     width: 5.3rem;
-    height: 140px;
+    height: 130px;
     border: none;
     border-radius: 5%;
     box-shadow: 3px 3px 10px grey;
@@ -413,8 +424,30 @@ body {
     align-items: center;
   }
 
+  .menu_items ul li img {
+    width: 80%;
+    height: 4.7rem;
+
+    border: none;
+    border-radius: 5%;
+  }
+
+  .coin button {
+    width: 4rem;
+    height: 30px;
+    margin: 0 1px 0 1px;
+
+    border: none;
+    border-radius: 15px;
+
+    background-color: #f2d035;
+
+    font-family: "Jua", sans-serif;
+    letter-spacing: 1px;
+  }
+
   .select_section button {
-    width: 40%;
+    width: 50%;
     height: 50px;
     margin: 10px 10px 10px 0px;
 
@@ -434,18 +467,16 @@ body {
     margin: 10px;
   }
 
-  .coin button {
-    width: 4rem;
-    height: 30px;
-    margin: 0 1px 0 1px;
+  /* 이거 추가함 */
+  .ex_result div {
+    margin-left: 15px;
+    font-size: 0.8rem;
+  }
 
-    border: none;
-    border-radius: 15px;
+  .total div {
+    font-size: 0.8rem;
 
-    background-color: #f2d035;
-
-    font-family: "Jua", sans-serif;
-    letter-spacing: 1px;
+    padding-left: 20px;
   }
 
   /************/
