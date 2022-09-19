@@ -524,13 +524,6 @@ body {
     margin-bottom: 4px;
   }
 
-  .self_area p {
-    color: grey;
-    font-size: 0.1rem;
-    letter-spacing: 1px;
-    margin-left: 30%;
-  }
-
   .self_area span {
     font-size: 13px;
     letter-spacing: 0.1rem;
