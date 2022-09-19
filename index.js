@@ -1,6 +1,7 @@
 // 동전 투입 함수
 function count(type) {
   const resultElement = document.getElementById("result");
+  const self = document.getElementById("self_coin").value;
 
   let number = parseInt(resultElement.innerText);
 
@@ -12,8 +13,18 @@ function count(type) {
     number = parseInt(number) + 1000;
   } else if (type === "5000") {
     number = parseInt(number) + 5000;
+  } else {
+    if (self === "") {
+      alert("금액을 입력해주세요.");
+    } else if (self >= 0) {
+      number = parseInt(number) + parseInt(self);
+    } else {
+      alert("숫자(양수)만 입력해주세요.");
+      document.getElementById("self_coin").value = "";
+    }
   }
   resultElement.innerText = parseInt(number);
+  document.getElementById("self_coin").value = "";
 }
 
 // 장바구니 관련
@@ -80,10 +91,15 @@ function empty() {
   let payingNumber = parseInt(payingElement.innerText);
 
   if (payingNumber > 0) {
+    // 돈 0원 만들기
     payingElement.innerText = 0;
 
+    // 장바구니 영역 비우기
     const basketItems = document.getElementById("basket_area");
     basketItems.innerHTML = "";
+
+    // 장바구니 배열 초기화
+    buyingArray = [];
   }
 }
 

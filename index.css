@@ -86,13 +86,13 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  cursor: pointer;
 
   transition: width, height;
 }
 
 .menu_items ul li:hover {
   transform: scale(1.1, 1.1);
-  cursor: pointer;
 }
 
 .menu_items ul li:active {
@@ -127,6 +127,7 @@ body {
 
   font-family: "Jua", sans-serif;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .menu_items ul li button:hover {
@@ -140,9 +141,9 @@ body {
 /* 코인 영역 */
 .coin_section {
   width: 100%;
-  height: 14rem;
-  margin: 22px 0 5px 0;
-  padding: 16px 0 16px 0;
+  height: 17rem;
+  margin: 20px 0 20px 0;
+  padding-bottom: 5px;
 
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -182,6 +183,29 @@ body {
 
 .coin button:active {
   background-color: #f2873d;
+}
+
+/* 직접입력 설정 */
+#self_coin {
+  border: solid 2px #fc7d23;
+  border-radius: 5px;
+  text-align: right;
+}
+
+#addCoin {
+  width: 60px;
+  height: 25px;
+  margin: 0 5px 0 5px;
+
+  border: none;
+  border-radius: 15px;
+
+  background-color: #f2d035;
+
+  font-family: "Jua", sans-serif;
+  letter-spacing: 1px;
+
+  cursor: pointer;
 }
 
 /* 잔액 영역 */
@@ -471,6 +495,18 @@ body {
     letter-spacing: 1px;
   }
 
+  .self_area {
+    margin-bottom: 4px;
+  }
+
+  .self_area span {
+    font-size: 13px;
+    letter-spacing: 0.1rem;
+  }
+
+  #self_coin {
+    width: 8rem;
+  }
   /**************/
   /* 오른쪽 영역 */
   /**************/
