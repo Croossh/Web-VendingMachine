@@ -14,10 +14,16 @@ function count(type) {
   } else if (type === "5000") {
     number = parseInt(number) + 5000;
   } else {
-    if (self === "") {
-      alert("금액을 입력해주세요.");
+    if (self === "" || self <= 99) {
+      alert("100원 이상의 금액을 입력해주세요. (100 ≤ 금액 ≤ 1억 )");
     } else if (self >= 0) {
-      number = parseInt(number) + parseInt(self);
+      // 100원 미만 단위 절삭
+      let makeArr = self.split("");
+      makeArr[makeArr.length - 1] = 0;
+      makeArr[makeArr.length - 2] = 0;
+      let joinArr = makeArr.join("");
+      // 금액 추가
+      number = parseInt(number) + parseInt(joinArr);
     } else {
       alert("숫자(양수)만 입력해주세요.");
       document.getElementById("self_coin").value = "";
@@ -25,6 +31,10 @@ function count(type) {
   }
   resultElement.innerText = parseInt(number);
   document.getElementById("self_coin").value = "";
+
+  if (parseInt(resultElement.innerText) >= 100000000) {
+    resultElement.innerText = 0;
+  }
 }
 
 // 장바구니 관련
@@ -163,4 +173,8 @@ function buy() {
     exchangeElement.innerText = parseInt(result);
     realElement.innerText = parseInt(realNumber);
   }
+}
+
+function refresh() {
+  document.getElementById("result").innerText = 0;
 }

@@ -59,14 +59,17 @@
               <button onClick="count('5000')">5000원</button>
             </div>
             <div class="self_area">
+              
               <span>직접입력</span>
-              <input type="text" id="self_coin">
+              <input type="text" id="self_coin" placeholder="금액을 입력해주세요.">
               <button id="addCoin" onClick="count()">입 금</button>
+              <p>100원 미만은 자동 절삭</p>
             </div>
             <div class="exchange_section">
               <div class="exchange">잔액</div>
               <div id="result">5000</div>
               <div class="won">원</div>
+              <button onClick="refresh()">반 환</button>
             </div>
           </div>
         </div>
