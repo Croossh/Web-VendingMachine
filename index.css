@@ -1,0 +1,596 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+body {
+  width: 1000px;
+  margin: auto;
+  background-color: #fcc538;
+  font-family: "Jua", sans-serif;
+  letter-spacing: 5px;
+}
+
+#header div {
+  text-align: center;
+}
+
+#header div img {
+  width: 70%;
+  margin: 20px 0 20px 0;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  width: 1000px;
+
+  border: solid 5px #f2873d;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 10px 10px 20px grey;
+}
+
+/*******************/
+/* 왼쪽 영역 기본 틀*/
+/*******************/
+.left {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 50%;
+  margin: 10px;
+}
+
+/* 메뉴 섹션 */
+.menu_section {
+  width: 100%;
+  height: 450px;
+
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 3px 3px 20px grey;
+
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu_items h2 {
+  padding-bottom: 20px;
+}
+
+.menu_items ul {
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu_items ul li {
+  list-style: none;
+
+  margin: 0 20px 20px 20px;
+  width: 100px;
+  height: 140px;
+  border: none;
+  border-radius: 5%;
+  box-shadow: 3px 3px 10px grey;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+
+  transition: width, height;
+}
+
+.menu_items ul li:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.menu_items ul li:active {
+  background-color: #fcc538;
+  opacity: 0.8;
+}
+
+.menu_items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 각 메뉴 이미지 & 버튼 설정 */
+.menu_items ul li img {
+  width: 80%;
+  height: 90px;
+
+  border: none;
+  border-radius: 5%;
+  text-decoration: none;
+}
+
+.menu_items ul li button {
+  width: 80%;
+  height: 25px;
+  background-color: #fcc538;
+
+  border: none;
+  border-radius: 20px;
+
+  font-family: "Jua", sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.menu_items ul li button:hover {
+  background-color: #f0b623;
+}
+
+.menu_items ul li button:active {
+  background-color: #f2873d;
+}
+
+/* 코인 영역 */
+.coin_section {
+  width: 100%;
+  height: 17.7rem;
+  margin: 20px 0 0 0;
+  padding-bottom: 5px;
+
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 3px 3px 20px grey;
+
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.coin {
+  margin: 15px 0 15px 0;
+}
+
+/* 코인 버튼 설정 */
+.coin button {
+  width: 80px;
+  height: 30px;
+  margin: 0 5px 0 5px;
+
+  border: none;
+  border-radius: 15px;
+
+  background-color: #f2d035;
+
+  font-family: "Jua", sans-serif;
+  letter-spacing: 1px;
+}
+
+.coin button:hover {
+  background-color: #f0b623;
+  cursor: pointer;
+}
+
+.coin button:active {
+  background-color: #f2873d;
+}
+
+/* 직접입력 설정 */
+#self_coin {
+  border: solid 2px #fc7d23;
+  border-radius: 5px;
+  text-align: right;
+}
+
+#addCoin {
+  width: 60px;
+  height: 25px;
+  margin: 0 5px 0 5px;
+
+  border: none;
+  border-radius: 15px;
+
+  background-color: #f2d035;
+
+  font-family: "Jua", sans-serif;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+}
+
+.self_area p {
+  color: grey;
+  font-size: 0.1rem;
+  letter-spacing: 1px;
+  margin-left: 44%;
+}
+
+/* 잔액 영역 */
+.exchange_section {
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exchange {
+  width: 20%;
+  line-height: 30px;
+  border-style: double none double double;
+  border-radius: 10px 0 0 10px;
+  border-color: #fc7d23;
+  border-width: 5px;
+
+  padding-top: 0.1rem;
+  text-align: center;
+}
+
+#result {
+  width: 35%;
+  line-height: 30px;
+  border-style: double none double none;
+  border-radius: 0.1px 0.1px 0.1px 0.1px;
+  border-color: #fc7d23;
+  border-width: 5px;
+
+  padding-top: 0.1rem;
+  padding-right: 20px;
+
+  text-align: end;
+  letter-spacing: 0px;
+}
+
+.won {
+  line-height: 30px;
+  border-style: double double double none;
+  border-radius: 0 10px 10px 0;
+  border-color: #fc7d23;
+  border-width: 5px;
+
+  padding-top: 0.1rem;
+  padding-right: 10px;
+}
+
+/* 반환 버튼 */
+.exchange_section button {
+  width: 60px;
+  height: 2.5rem;
+  margin: 0 5px 0 5px;
+
+  margin-left: 10px;
+  border: none;
+  border-radius: 15px;
+
+  background-color: #dbdbdb;
+
+  font-family: "Jua", sans-serif;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+}
+
+/**********************/
+/* 오른쪽 영역 기본 틀 */
+/**********************/
+.right {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 50%;
+  margin: 10px;
+}
+
+/* 장바구니 영역 */
+.basket_section {
+  width: 100%;
+  height: 20rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 3px 3px 20px grey;
+}
+
+#basket_area {
+  width: 80%;
+  height: 10rem;
+  padding: 5px;
+
+  border: double 5px #fc7d23;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+/* 선택 영역 */
+.select_section {
+  width: 80%;
+  height: 100px;
+  margin-top: 10px;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+.select_section button {
+  width: 40%;
+  height: 50px;
+  margin: 10px 10px 10px 0px;
+
+  font-family: "Jua", sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.select_btn {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+/* 장바구니 구매 금액 영역 */
+.ex_result {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  padding: 10px 0 0 0;
+}
+
+.ex_result div {
+  margin-left: 15px;
+  font-size: 19px;
+}
+
+#pay_result {
+  width: 40%;
+  text-align: end;
+
+  letter-spacing: 0px;
+}
+
+/* 총 구매 영역 */
+.totalBying_section {
+  width: 100%;
+  height: 26rem;
+
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 3px 3px 20px grey;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 22px 0 0 0;
+}
+
+#totalBying_area {
+  width: 80%;
+  height: 400px;
+  padding: 5px;
+  border: double 5px #fc7d23;
+  border-radius: 10px;
+
+  overflow: auto;
+}
+
+#totalBying_area li {
+  font-size: 20px;
+  padding: 5px 0 0 0;
+}
+
+/* 총 금액 */
+.total {
+  width: 80%;
+  height: 80px;
+  padding: 20px 10px 0 10px;
+
+  display: flex;
+  justify-content: end;
+}
+
+.total div {
+  font-size: 19px;
+
+  padding-left: 20px;
+}
+
+#total_result {
+  width: 20%;
+  text-align: end;
+  letter-spacing: 0px;
+}
+
+/* 하단 영역 */
+#footer {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 20px 10px 50px 10px;
+}
+
+#footer a {
+  text-decoration: none;
+
+  font-weight: bold;
+  color: rgb(90, 86, 86);
+  letter-spacing: 0px;
+}
+
+/*************/
+/* 미디어쿼리 */
+/*************/
+@media (min-width: 320px) and (max-width: 960px) {
+  body {
+    width: 22rem;
+    margin: auto;
+    background-color: #fcc538;
+    font-family: "Jua", sans-serif;
+    /* color 추가 */
+    color: black;
+    letter-spacing: 5px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    border: solid 5px #f2873d;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 10px 10px 20px grey;
+  }
+
+  /************/
+  /* 왼쪽 영역 */
+  /************/
+  .left {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 94.5%;
+    margin: 10px;
+  }
+
+  .menu_items ul li {
+    list-style: none;
+
+    margin: 0 10px 20px 10px;
+    width: 5.3rem;
+    height: 130px;
+    border: none;
+    border-radius: 5%;
+    box-shadow: 3px 3px 10px grey;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .menu_items ul li img {
+    width: 80%;
+    height: 4.7rem;
+
+    border: none;
+    border-radius: 5%;
+  }
+
+  .coin button {
+    width: 4rem;
+    height: 30px;
+    margin: 0 1px 0 1px;
+
+    border: none;
+    border-radius: 15px;
+
+    background-color: #f2d035;
+
+    font-family: "Jua", sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .select_section button {
+    width: 50%;
+    height: 50px;
+    margin: 10px 10px 10px 0px;
+
+    font-family: "Jua", sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .self_area {
+    margin-bottom: 4px;
+  }
+
+  .self_area span {
+    font-size: 13px;
+    letter-spacing: 0.1rem;
+  }
+
+  #self_coin {
+    width: 8rem;
+  }
+
+  .exchange_section button {
+    width: 3rem;
+    height: 2.5rem;
+    margin: 0 5px 0 5px;
+
+    margin-left: 10px;
+    border: none;
+    border-radius: 15px;
+
+    background-color: #dbdbdb;
+
+    font-family: "Jua", sans-serif;
+    letter-spacing: 0px;
+
+    cursor: pointer;
+  }
+
+  /**************/
+  /* 오른쪽 영역 */
+  /**************/
+  .right {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 94.5%;
+    margin: 10px;
+  }
+
+  /* 이거 추가함 */
+  .ex_result div {
+    margin-left: 15px;
+    font-size: 0.8rem;
+  }
+
+  .total div {
+    font-size: 0.8rem;
+
+    padding-left: 20px;
+  }
+
+  /************/
+  /* 하단 영역 */
+  /************/
+  #footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 10px 10px 50px 10px;
+  }
+
+  #footer a {
+    text-decoration: none;
+
+    padding-top: 10px;
+    font-weight: bold;
+    color: rgb(90, 86, 86);
+    letter-spacing: 0px;
+  }
+}

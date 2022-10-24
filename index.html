@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+    <title>Croosh103-WEB_VM</title>
+  </head>
+  <body>
+    <header id="header">
+      <div>
+        <img src="./img/justdrink.png" alt="just drink!" />
+      </div>
+    </header>
+    <main id="main">
+      <div class="container">
+        <!-- 왼쪽 영역 -->
+        <div class="left">
+          <div class="menu_section">
+            <div class="menu_items">
+              <h2>MENU</h2>
+              <ul>
+                <li onClick="plus('500')">
+                  <img src="./img/water.jpg" alt="생수" />
+                  <button id="water"">500원</button>
+                </li>
+                <li onClick="plus('800')">
+                  <img src="./img/milkis.jpg" alt="밀키스(캔)" />
+                  <button id="milkis"">800원</button>
+                </li>
+                <li onClick="plus('1200')">
+                  <img src="./img/coke.jpg" alt="콜라" />
+                  <button id="coke"">1200원</button>
+                </li>
+                <li onClick="plus('1500')">
+                  <img src="./img/hot6.jpg" alt="핫식스" />
+                  <button id="hot6"">1500원</button>
+                </li>
+                <li onClick="plus('2000')">
+                  <img src="./img/fanta.jpg" alt="환타" />
+                  <button id="fanta"">2000원</button>
+                </li>
+                <li onClick="plus('4500')">
+                  <img src="./img/condi.jpg" alt="컨디션" />
+                  <button id="condi"">4500원</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="coin_section">
+            <h2>금액 입금</h2>
+            <div class="coin">
+              <button onClick="count('100')">100원</button>
+              <button onClick="count('500')">500원</button>
+              <button onClick="count('1000')">1000원</button>
+              <button onClick="count('5000')">5000원</button>
+            </div>
+            <div class="self_area">
+              
+              <span>직접입력</span>
+              <input type="text" id="self_coin" placeholder="금액을 입력해주세요.">
+              <button id="addCoin" onClick="count()">입 금</button>
+
+            </div>
+            <div class="exchange_section">
+              <div class="exchange">잔액</div>
+              <div id="result">5000</div>
+              <div class="won">원</div>
+              <button onClick="refresh()">반 환</button>
+            </div>
+          </div>
+        </div>
+        <!-- 오른쪽 영역 -->
+        <div class="right">
+          <div class="basket_section">
+            <h2>장바구니</h2>
+            <div id="basket_area"></div>
+            <div class="select_section">
+              <div class="select_btn">
+                <button onClick="empty()">비우기</button>
+                <button onClick="buy()">구 매</button>
+              </div>
+              <div class="ex_result">
+                <div>총</div>
+                <div id="pay_result">0</div>
+                <div>원</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="totalBying_section">
+            <h2>구매한 음료</h2>
+            <div id="totalBying_area"></div>
+            <div class="total">
+              <div>총</div>
+              <div id="total_result">0</div>
+              <div>원</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer">
+      <a href="https://croossh103.tistory.com/"
+        >Blog: https://croossh103.tistory.com/</a
+      >
+      <a href="https://github.com/Croossh"
+        >Github: https://github.com/Croossh</a
+      >
+    </footer>
+  </body>
+</html>
