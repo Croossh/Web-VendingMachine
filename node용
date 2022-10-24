@@ -1,0 +1,155 @@
+//입력 사용을 위한 기본 부분
+var readline = require("readline");
+var r = readline.createInterface({
+    input:process.stdin,
+    output:process.stdout
+});
+
+let total = 0
+
+//메뉴판
+function Menu(){
+    console.log("---- 메 뉴 판 ----");
+    console.log("1. 생 수  500원");
+    console.log("2. 밀키스 1000원");
+    console.log("3. 콜 라  1200원");
+    console.log("4. 핫식스 1600원");
+}
+//투입 금액
+function Money(){
+    console.log("동전 투입 방법: <a: 100원 / s: 500원 / d: 1000원 / f: 5000원>");
+}
+//현재금액 안내
+function CurrentAmount(){
+    console.log("현재 금액은 "+total+"원 입니다.");
+}
+//금액 부족!
+function Alert(){
+    console.log("! 금액이 부족합니다.")
+}
+//안내 방송
+function Help(){
+    console.log("[동전 k / 메뉴판 m / 종료 exit]");
+}
+// 000원 투입 안내 문구
+function Insert(count){
+    console.log(count+"원 투입!");
+}
+//최초 시작 안내 문구
+function start(){
+    Menu();
+    console.log("");
+    CurrentAmount();
+    console.log("동전을 넣어주세요.");
+    Money();
+    Help();
+}
+
+start();
+
+//입력값에 따라서 처리(자동으로 반복입력 받음)
+r.on("line", function (number){
+    switch(number)
+    {
+        case "m":
+            Menu();
+            break;
+        case "k":
+            Money();
+            CurrentAmount();
+            break;
+        case "exit":
+            r.close();
+            break;
+                
+        case "a":
+            total += 100;
+            Insert(100);
+            CurrentAmount();
+            break;
+        case "s":
+            total += 500;
+            Insert(500);
+            CurrentAmount();
+            break;
+        case "d":
+            total += 1000;
+            Insert(1000);
+            CurrentAmount();
+            break;
+        case "f":
+            total += 5000;
+            Insert(5000);
+            CurrentAmount();
+            break;
+        
+        case "1":
+            console.log("<생 수(500원) 선택!>");
+            if(total >= 500){
+                total -= 500;
+                CurrentAmount();
+                }else{
+                    Alert();
+                    CurrentAmount();  
+                }
+            break;
+        case "2":
+            console.log("<밀키스(900원) 선택!>");
+            if(total >= 900){
+                total -= 900;
+                CurrentAmount();
+                }else{
+                    Alert();
+                    CurrentAmount();
+                }
+            break;
+        case "3":
+            console.log("<콜 라(1200원) 선택!>");
+            if(total >= 1200){
+                total -= 1200;
+                CurrentAmount();
+                }else{
+                    Alert();
+                    CurrentAmount();
+                }
+            break;
+        case "4":
+            console.log("<핫식스(1500원) 선택!>");
+            if(total >= 1500){
+                total -= 1500;
+                CurrentAmount();
+                }else{
+                    Alert();
+                    CurrentAmount();
+                }
+            break;
+         
+        
+        // case "0":
+        //     console.log("정말 자판기를 구매하시겠습니까? [YES/NO]");
+        //         switch(number)
+        //         {
+        //             case "YES":
+        //                 if(total >= 100000){
+        //                     total = 0;
+        //                     console.log("축하합니다! 자판기는 이제 당신의 것입니다!");
+        //                     r.close();
+        //                     }else{
+        //                         console.log("!금액이 부족합니다.")+CurrentAmount();
+        //                     }
+        //                 break;
+        //             case "NO":
+        //                 start();
+        //                 break;
+        //         }
+                
+        default:
+            console.log("잘못 입력하였습니다.");   
+    }
+    Help();
+});
+
+//r.close가 호출되면 처리되는 부분(프로그램 종료)
+r.on("close",function(){
+    process.exit();
+})
