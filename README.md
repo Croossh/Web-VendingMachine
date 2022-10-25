@@ -52,7 +52,7 @@ const getHowMany = (arr) => {
   return goal;
 };
 ```
-결국 무한의 for...of 문으로 완성을 시켰고 이는 reduce메서드로도 만들 수 있었으나... reduce 더할때만 써먹어봤지... 어려웠다.<br>
+결국 for...of 문으로 완성을 시켰고 이는 reduce메서드로도 만들 수 있었으나... reduce 더할때만 써먹어봤지... 어려웠다.<br>
 아무튼! 배열의 중복 갯수를 확인해줄 수있는 간단한 로직을 설계하고 함수로 만들어서 버튼 클릭시마다 재 랜더링 되게 만들었다.<br>
 ```javascript
 let test = getHowMany(buyingArray);
