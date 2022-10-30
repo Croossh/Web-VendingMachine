@@ -12,6 +12,11 @@
 ✔ 모바일 및 웹 반응형<br>
 ✔ 장바구니 및 구매한 음료 합산 표시
 
+### WHY Start?<br> 
+✔ HTML의 기본 구조와 CSS(flex)에 익숙해지기 위해<br>
+✔ javascript를 통한 DOM에 대한 이해<br>
+✔ javascript ES6를 연습하고, 기본 문법에 대한 이해 증진<br>
+
 # 회고
 첫 프로젝트의 시작은 그림과 같이 만들었다.<br>
 <br>
