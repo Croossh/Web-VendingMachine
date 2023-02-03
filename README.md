@@ -22,14 +22,14 @@
 
 🔽 프로젝트 초창기 UI
 
-![just_drink_initial.jpg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c585fb4c-12bd-40ec-b6bd-1a5d514ca444/just_drink_initial.jpg)
+<img src="git_Image/just_drink_initial.jpg" width="500" height="300"/>
 
 DOM에 대해서 알게 되었고, JS에서 DOM에 접근할 수 있는 메서드들에 대해 공부하게 되었다
 inline으로 css와 js 를 적용하는 방법을 배우게 되었다.
 
-🔽 프로젝트 수정 UI
+🔽 프로젝트 수정 후 UI
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b541af0-553d-4040-b2ca-9765799fa796/Untitled.png)
+<img src="git_Image/Untitled (1).png" width="500" height="300"/>
 
 ### 1. 🚨 **트러블 슈팅(문제)** - 장바구니
 
