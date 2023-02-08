@@ -42,11 +42,15 @@ let buyingArray = [];
 let totalArray = [];
 
 const getHowMany = (arr) => {
-  let goal = {};
-  for (el of arr) {
-    goal[el] = (goal[el] || 0) + 1;
+  const map = new Map();
+  for (let i = 0; i < arr.length; i++) {
+    if (map.has(arr[i])) {
+      map.set(arr[i], map.get(arr[i]) + 1);
+    } else {
+      map.set(arr[i], 1);
+    }
   }
-  return goal;
+  return map;
 };
 
 // 클릭시 장바구니 추가 관련 함수
@@ -77,14 +81,15 @@ function plus(type) {
   }
 
   // 배열 중복 갯수 확인
-  let test = getHowMany(buyingArray);
+  const tmpProduct = getHowMany(buyingArray);
+  console.log(tmpProduct);
   let come = "";
-  for (i in test) {
-    come += `<li>${i} X ${test[i]}</li>`;
+  for (const [key, value] of tmpProduct) {
+    come += `<li>${key} X ${value}</li>`;
   }
 
   // 이전 자식요소 삭제
-  let cell = document.getElementById("basket_area");
+  const cell = document.getElementById("basket_area");
   while (cell.hasChildNodes()) {
     cell.removeChild(cell.firstChild);
   }
@@ -140,10 +145,11 @@ function buy() {
     alert("모든 물품을 구매하였습니다.");
 
     // 배열 중복 갯수 확인
-    let countBuy = getHowMany(buyingArray);
+    const tmpProduct = getHowMany(buyingArray);
+    console.log(tmpProduct);
     let come = "";
-    for (i in countBuy) {
-      come += `<li>${i} X ${countBuy[i]}</li>`;
+    for (const [key, value] of tmpProduct) {
+      come += `<li>${key} X ${value}</li>`;
     }
 
     // 이전 자식요소 삭제
@@ -161,10 +167,10 @@ function buy() {
     buyingArray = [];
 
     // 총 구매 갯수 확인
-    let countTotal = getHowMany(totalArray);
+    let tmpTotal = getHowMany(totalArray);
     let come2 = "";
-    for (z in countTotal) {
-      come2 += `<li>${z} X ${countTotal[z]}</li>`;
+    for (const [key, value] of tmpTotal) {
+      come2 += `<li>${key} X ${value}</li>`;
     }
 
     // 장바구니에 보여지는 영역
