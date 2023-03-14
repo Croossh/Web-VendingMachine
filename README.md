@@ -74,7 +74,33 @@ for (i in showList) {
 };
 ```
 
-배열 중복 개수를 확인하고, list 로 come에 차곡차곡 쌓은 뒤에 innerHTML로 보여주었다.
+배열 중복 개수를 확인하고, list 로 come에 차곡차곡 쌓은 뒤에 innerHTML로 보여주었다.<br>
+<br>
+### 23.02 추가 해결방법 (Map 자료구조)
+```js
+const getHowMany = (arr) => {
+  const map = new Map();
+  for (let i = 0; i < arr.length; i++) {
+    if (map.has(arr[i])) {
+      map.set(arr[i], map.get(arr[i]) + 1);
+    } else {
+      map.set(arr[i], 1);
+    }
+  }
+  return map;
+};
+```
+- 기존 객체로 다루던 데이터를 Map 자료구조로 적용하였다.
+- Map의 `KEY` 가 없으면 값에 1을 추가, 있으면 +1 을 추가하는 방법을 채택하였다.
+- { 생수 ⇒ 1, 환타 ⇒ 2, … } 이렇게 반환해주는 함수로 변경하였다.
+```js
+const tmpProduct = getHowMany(buyingArray);
+  let come = "";
+  for (const [key, value] of tmpProduct) {
+    come += `<li>${key} X ${value}</li>`;
+  }
+```
+- 받아오는 부분에서 for..of 문으로 key와 value 를 come 변수에 쌓아주고 출력하였다.
 
 **- 그 외 고민 했던 부분 -**
 
@@ -88,10 +114,5 @@ for (i in showList) {
 
 3. 반응형 웹으로 만들기 위해 미디어 쿼리를 적용했고, 처음엔 불필요한 요소까지 모두 다시 적용하느라고 애썼지만 시행착오를 겪어서 필요한 부분만 뽑아서 미디어 쿼리를 먹일 수 있는 방법을 찾았다.
 
-🔎 일단 길이같은 경우는 고정된 px보다 rem이나, 퍼센트(%)를 쓰면 반응형을 만들 때 노고가 훨씬 적게 들어간다!<br>
+🔎 일단 길이같은 경우는 고정된 px보다 rem이나, 퍼센트(%)를 쓰면 반응형을 만들 때 노고가 훨씬 적게 들어간다.<br>
 🔎row로 지정된 flex를 세로로 colunm으로 만들어주기만 하면 다른 영역들은 알아서 이쁘게 정렬된다.<br>
-
-# 느낀점
-1. 아무런 라이브러리나 프레임워크 도움 없이 하는 하드코딩이 진짜 확실히 짜릿한 것 같다.
-2. 백문이 불여일견 직접 뭐든 해봐야 체득이 되고 내것이 되는걸 깨달았다.
-3. 사실 포기하고 버려두던 프로젝트였는데 끝까지 포기하지않고 매달리니 정말 이쁘고 뿌듯한 미니프로젝트를 완성할 수 있었다!! 아자!
