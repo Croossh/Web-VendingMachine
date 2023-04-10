@@ -1,6 +1,7 @@
 // 동전 투입 함수
 function count(type) {
   const resultElement = document.getElementById("result");
+  console.log(resultElement.innerText);
   const self = document.getElementById("self_coin").value;
 
   let number = parseInt(resultElement.innerText);
